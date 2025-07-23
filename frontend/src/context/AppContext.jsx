@@ -6,7 +6,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
   const currency = "$";
-  const backendUrl = "https://doctor-app-backend-3vi8.onrender.com";
+  const backendUrl = "https://schedulemdbackend.onrender.com";
   const [doctors, setDoctors] = useState([]);
   const [loadingDoctors, setLoadingDoctors] = useState(true);
   const [token, setToken] = useState(
