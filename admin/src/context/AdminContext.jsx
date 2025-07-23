@@ -11,7 +11,7 @@ const AdminContextProvider = (props) => {
   const [appointments, setAppointments] = useState([]);
   const [dashData, setDashData] = useState(false);
 
-  const backendUrl = "https://doctor-app-backend-3vi8.onrender.com";
+  const backendUrl = "https://schedulemdbackend.onrender.com";
   const getAllDoctors = async () => {
     try {
       const { data } = await axios.post(
