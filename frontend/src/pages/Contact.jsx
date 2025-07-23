@@ -22,11 +22,11 @@ const Contact = () => {
             54709 Williams Station <br /> Suite 350, Washington , USA
           </p>
           <p className="text-gray-500">
-            Tel: (415) 555-0132 <br />
-            Email: hellopres@dev.com
+            Tel: +1-202-456-7890 <br />
+            Email: schedulemd@gmail.com
           </p>
           <p className="font-medium text-lg text-gray-600">
-            Careers at Prescripto
+            Careers at ScheduleMD
           </p>
           <p className="text-gray-500">
             Learn more about out time and job openings.

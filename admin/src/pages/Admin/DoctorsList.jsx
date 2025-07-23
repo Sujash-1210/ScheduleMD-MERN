@@ -11,11 +11,10 @@ const DoctorsList = () => {
     }
   }, [aToken]);
 
-  console.log("changeavailability in component:", changeAvailability);
   return (
-    <div className="m-5 max-h-[90vh] overflow-y-scroll ">
+    <div className="m-5 max-h-[90vh]  ">
       <h1 className="text-lg font-medium">All Doctors</h1>
-      <div className="flex flex-wrap w-full gap-4 pt-5 gap-y-6">
+      <div className="flex flex-wrap w-full gap-4 pt-5">
         {doctors.map((item, index) => (
           <div
             className="border border-indigo-200 rounded-xl max-w-56 overflow-hidden cursor-pointer group"

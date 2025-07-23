@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-//import { doctors } from "../assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -9,23 +8,27 @@ const AppContextProvider = (props) => {
   const currency = "$";
   const backendUrl = "https://doctor-app-backend-3vi8.onrender.com";
   const [doctors, setDoctors] = useState([]);
+  const [loadingDoctors, setLoadingDoctors] = useState(true);
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : false
   );
   const [userData, setUserData] = useState(false);
   const getDoctorData = async () => {
-    try {
-      const { data } = await axios.get(backendUrl + "/api/doctor/list");
-      if (data.success) {
-        setDoctors(data.doctors);
-      } else {
-        toast.error(data.message);
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
+  try {
+    setLoadingDoctors(true);
+    const { data } = await axios.get(backendUrl + "/api/doctor/list");
+    if (data.success) {
+      setDoctors(data.doctors);
+    } else {
+      toast.error(data.message);
     }
-  };
+  } catch (error) {
+    (error);
+    toast.error(error.message);
+  } finally {
+    setLoadingDoctors(false);
+  }
+};
   const loadUserProfileData = async () => {
     try {
       const { data } = await axios.get(backendUrl + "/api/user/get-profile", {
@@ -37,7 +40,7 @@ const AppContextProvider = (props) => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      (error);
       toast.error(error.message);
     }
   };
@@ -45,6 +48,7 @@ const AppContextProvider = (props) => {
     doctors,
     getDoctorData,
     currency,
+    loadingDoctors,
     token,
     setToken,
     backendUrl,

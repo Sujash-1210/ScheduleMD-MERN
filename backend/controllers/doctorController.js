@@ -7,13 +7,13 @@ import appointmentModel from "../models/appointmentModel.js";
 const changeAvailability = async(req, res)=>{
   try {
     const {docId} = req.body;
-    console.log(req.body)
+    (req.body)
     const docData = await doctorModel.findById(docId)
     await doctorModel.findByIdAndUpdate(docId, {available: !docData.available})
     res.json({success:true, message:'Availability changed'})
     
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -23,7 +23,7 @@ const doctorList = async (req,res)=>{
     const doctors = await doctorModel.find({}).select(['-password','-email'])
     res.json({success:true, doctors})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -46,7 +46,7 @@ const loginDoctor = async(req,res)=>{
     }
 
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -58,7 +58,7 @@ const appointmentsDoctor = async(req,res)=>{
     const appointments = await appointmentModel.find({docId})
     res.json({success:true,appointments})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -75,7 +75,7 @@ const appointmentComplete = async (req,res)=>{
       return res.json({success:false,message:"mark failed"})
     }
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -92,7 +92,7 @@ const appointmentCancel = async (req,res)=>{
       return res.json({success:false,message:"cancelletion failed"})
     }
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -123,7 +123,7 @@ const doctorDashboard=async(req,res)=>{
     }
     res.json({success:true,dashData})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -136,7 +136,7 @@ const doctorProfile = async (req,res)=>{
     res.json({success:true,profileData})
 
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -148,7 +148,7 @@ const updateDoctorProfile = async(req,res)=>{
     await doctorModel.findByIdAndUpdate(docId,{fees,address,available})
     res.json({success:true,message:"profile updated"})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }

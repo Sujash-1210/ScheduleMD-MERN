@@ -13,7 +13,7 @@ const RelatedDoctors = ({ speciality, docId }) => {
         (doc) => doc.speciality === speciality && doc._id !== docId
       );
       setRelDoc(doctorsData);
-      console.log(doctorsData);
+      (doctorsData);
     }
   }, [doctors, speciality, docId]);
 

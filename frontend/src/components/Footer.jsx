@@ -29,14 +29,14 @@ const Footer = () => {
           <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-2 text-gray-600">
             <li>+1-202-456-7890</li>
-            <li>doctorapp@dev.com</li>
+            <li>schedulemd@gmail.com</li>
           </ul>
         </div>
       </div>
       <div>
         <hr />
         <p className="text-center py-5 text-sm">
-          Copyright 2025 @DoctorApp - ALL RIGHTS RESERVED
+          Copyright 2025 @ScheduleMd - ALL RIGHTS RESERVED
         </p>
       </div>
     </div>

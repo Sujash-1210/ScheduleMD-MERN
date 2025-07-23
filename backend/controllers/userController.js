@@ -35,7 +35,7 @@ const registerUser = async (req, res)=>{
     const token = jwt.sign({id:user._id}, process.env.JWT_SECRET)
     res.json({success:true, token})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -56,7 +56,7 @@ const loginUser = async(req,res)=>{
       res.json({success:false, message:"Invalid credentials"})
     }
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -69,7 +69,7 @@ const getProfile = async(req,res)=>{
     res.json({success:true, userData})
 
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -91,7 +91,7 @@ const updateProfile = async (req,res)=>{
     }
     res.json({success:true, message:"profile updated"})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -138,7 +138,7 @@ const bookAppointment = async(req,res)=>{
     res.json({success:true, message:'Appointment booked'})
   } 
   catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -150,7 +150,7 @@ const listAppointment = async (req,res)=>{
     const appointments = await appointmentModel.find({userId})
     res.json({success:true,appointments})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }
@@ -174,7 +174,7 @@ const cancelAppointment = async(req,res)=>{
     await doctorModel.findByIdAndUpdate(docId,{slots_booked})
     res.json({success:true, message:"appoitment canceled"})
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false, message:error.message})
   }
 }

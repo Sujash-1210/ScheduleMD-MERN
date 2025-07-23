@@ -40,9 +40,9 @@ const AddDoctor = () => {
         JSON.stringify({ line1: address1, line2: address2 })
       );
 
-      //console log
+      
       formData.forEach((value, key) => {
-        console.log(`${key} : ${value}`);
+        (`${key} : ${value}`);
       });
 
       const { data } = await axios.post(
@@ -56,18 +56,15 @@ const AddDoctor = () => {
         SetName("");
         SetPassword("");
         SetEmail("");
-        //SetAddress1("");
-        //setAddress2("");
         SetDegree("");
-        //SetAbout("");
         SetFees("");
       } else {
         toast.error(data.message);
-        console.log(data.message);
+        
       }
     } catch (error) {
       toast.error(error.message);
-      console.log(error);
+      
     }
   };
 

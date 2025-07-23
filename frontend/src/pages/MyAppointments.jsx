@@ -37,10 +37,10 @@ const MyAppointments = () => {
 
       if (data.success) {
         setAppointments(data.appointments.reverse());
-        console.log(data.appointments);
+        (data.appointments);
       }
     } catch (error) {
-      console.log(error);
+      (error);
       toast.error(error.message);
     }
   };
@@ -59,7 +59,7 @@ const MyAppointments = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      (error);
       toast.error(error.message);
     }
   };

@@ -12,7 +12,7 @@ const authUser = async(req,res,next) =>{
     next()
     
   } catch (error) {
-    console.log(error)
+    (error)
     res.json({success:false,message:error.message})
   }
 }

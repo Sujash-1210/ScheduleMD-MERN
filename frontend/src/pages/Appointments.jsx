@@ -102,13 +102,13 @@ const Appointments = () => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      (error);
       toast.error(error.message);
     }
   };
 
   useEffect(() => {
-    console.log(docSlots);
+    (docSlots);
   }, [docSlots]);
 
   useEffect(() => {
